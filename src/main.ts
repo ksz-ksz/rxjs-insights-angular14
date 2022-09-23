@@ -4,8 +4,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import { connect } from '@rxjs-insights/devtools/connect';
+
 if (environment.production) {
   enableProdMode();
+} else {
+  connect();
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
